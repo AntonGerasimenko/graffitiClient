@@ -1,0 +1,57 @@
+-- Merging decision tree log ---
+manifest
+ADDED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml:2:1-20:12
+	xmlns:android
+		ADDED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml:2:11-69
+	package
+		ADDED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml:3:5-46
+		INJECTED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml
+		INJECTED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml
+		INJECTED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml
+		INJECTED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml
+application
+ADDED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml:5:5-17:19
+MERGED from [com.android.support:support-v4:22.2.0] E:\projects\Python\GraffitiClient\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:22:5-20
+MERGED from [com.actionbarsherlock:actionbarsherlock:4.4.0] E:\projects\Python\GraffitiClient\app\build\intermediates\exploded-aar\com.actionbarsherlock\actionbarsherlock\4.4.0\AndroidManifest.xml:4:3-17
+	android:label
+		ADDED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml:9:9-41
+	android:allowBackup
+		ADDED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml:6:9-35
+	android:icon
+		ADDED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml:8:9-43
+	android:theme
+		ADDED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml:10:9-66
+	android:name
+		ADDED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml:7:9-30
+activity#by.minsk.gerasimenko.anton.feed.MainActivity
+ADDED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml:11:9-16:20
+	android:name
+		ADDED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml:11:19-47
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml:12:13-15:29
+action#android.intent.action.MAIN
+ADDED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml:13:17-69
+	android:name
+		ADDED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml:13:25-66
+category#android.intent.category.LAUNCHER
+ADDED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml:14:17-77
+	android:name
+		ADDED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml:14:27-74
+uses-permission#android.permission.INTERNET
+ADDED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml:19:5-67
+	android:name
+		ADDED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml:19:22-64
+uses-sdk
+INJECTED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:support-v4:22.2.0] E:\projects\Python\GraffitiClient\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\AndroidManifest.xml:20:5-43
+MERGED from [com.actionbarsherlock:actionbarsherlock:4.4.0] E:\projects\Python\GraffitiClient\app\build\intermediates\exploded-aar\com.actionbarsherlock\actionbarsherlock\4.4.0\AndroidManifest.xml:3:3-70
+	android:targetSdkVersion
+		INJECTED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml
+		INJECTED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml
+		INJECTED from E:\projects\Python\GraffitiClient\app\src\main\AndroidManifest.xml

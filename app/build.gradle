@@ -1,0 +1,46 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        config {
+            keyAlias '12345678'
+            keyPassword '12345678'
+        }
+    }
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+    defaultConfig {
+        applicationId "by.minsk.gerasimenko.anton.feed"
+        minSdkVersion 8
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+
+        //exclude 'META-INF/services/com.fasterxml.jackson.core.ObjectCodec'
+        //exclude 'META-INF/services/com.fasterxml.jackson.core.JsonFactory'
+
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:support-v4:22.2.0'
+    compile 'com.actionbarsherlock:actionbarsherlock:4.4.0@aar'
+    compile files('libs/ormlite-android-4.49-SNAPSHOT.jar')
+    compile files('libs/ormlite-core-4.49-SNAPSHOT.jar')
+    compile 'com.fasterxml.jackson.core:jackson-core:2.5.3'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.5.3'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.5.3'
+    compile files('libs/universal-image-loader-1.9.4.jar')
+}

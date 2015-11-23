@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Feed</string>
+
+    <string name="welcome">Привет!</string>
+    <string name="list_news">Список новостей</string>
+    <string name="current_news">Новости подробно</string>
+
+
+    <string name="err1">Нет связи</string>
+    <string name="err2">Не могу загрузить статью</string>
+
+</resources>
