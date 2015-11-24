@@ -51,6 +51,16 @@ public class DBService {
         return Collections.emptyList();
     }
 
+
+    public static Set <Integer> getLoadedEvents() {
+        Set <Integer> out = new HashSet<>();
+
+        for (Event news:getAll()) {
+            out.add(news.getId());
+        }
+        return out;
+    }
+
   /*  public static void addTextNews(int id,String htmlText) {
         try {
             Dao<Event,String> dao = DBManager.getInstance().getHelper().getNewsDao();

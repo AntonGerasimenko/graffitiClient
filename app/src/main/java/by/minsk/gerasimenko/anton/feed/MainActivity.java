@@ -55,10 +55,10 @@ public  class MainActivity extends SherlockFragmentActivity implements Fragments
     @Override
     public void showNews(Event news) {
 
-      /*  Fragment fragment = NewsFragm.newInstance(news);
+        Fragment fragment = NewsFragm.newInstance(news);
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.container, fragment, NewsFragm.TAG);
-        ft.addToBackStack(NewsFragm.TAG).commit();*/
+        ft.addToBackStack(NewsFragm.TAG).commit();
     }
 
     @Override
@@ -72,9 +72,9 @@ public  class MainActivity extends SherlockFragmentActivity implements Fragments
             case EventsList.TAG:
                 bar.setTitle(R.string.list_news);
                 break;
-           /* case NewsFragm.TAG:
+            case NewsFragm.TAG:
                 bar.setTitle(R.string.current_news);
-                break;*/
+                break;
         }
     }
 }

@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:weightSum="100"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:orientation="vertical"
@@ -20,17 +19,35 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_gravity="center"
-            android:text="title"
-            android:id="@+id/title"  />
+            android:text="date"
+            android:id="@+id/date"  />
     </LinearLayout>
 
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="30dp"
-        android:layout_weight="30"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Lorem ipsum"
-        android:id="@+id/text"
-        android:layout_gravity="center_horizontal" />
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="30dp"
+            android:layout_weight="30"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Title"
+            android:id="@+id/title" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="30dp"
+            android:layout_weight="30"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:maxLength="150"
+            android:id="@+id/text" />
+
+
+    </LinearLayout>
+
+
 </LinearLayout><!-- From: file:/E:/projects/Python/GraffitiClient/app/src/main/res/layout/item_short_list.xml -->

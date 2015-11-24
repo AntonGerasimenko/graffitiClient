@@ -15,6 +15,7 @@ public class Event implements Serializable {
     @DatabaseField(dataType = DataType.INTEGER) private int id;
     @DatabaseField(dataType = DataType.INTEGER) private int eventId;
     @DatabaseField(dataType = DataType.STRING) private String title;
+    @DatabaseField(dataType = DataType.STRING) private String date;
     @DatabaseField(dataType = DataType.STRING) private String text;
     @DatabaseField(dataType = DataType.STRING) private String urlImage;
 
@@ -40,6 +41,7 @@ public class Event implements Serializable {
         instance.setTitle(eventPOJO.getTitle());
         instance.setEventId(eventPOJO.getId());
         instance.setUrlImage(eventPOJO.getImage());
+        instance.setDate(eventPOJO.getDate());
 
         return  instance;
     }
@@ -74,5 +76,13 @@ public class Event implements Serializable {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

@@ -30,9 +30,9 @@ import by.minsk.gerasimenko.anton.feed.models.Event;
 /**
  * Created by gerasimenko on 01.10.2015.
  */
-public class NewsFragm /*extends Fragment implements ProgressListener */{
+public class NewsFragm extends Fragment implements ProgressListener {
 
-  /*  public static final String TAG = "NewFragm";
+    public static final String TAG = "NewFragm";
 
     private FragmentsManage manager;
     private Event news;
@@ -92,10 +92,10 @@ public class NewsFragm /*extends Fragment implements ProgressListener */{
     public void onResume() {
 
         if (news != null) {
-            if (news.isNeedLoad()) {
+            if (false) {
 
                 progressBar.setVisibility(View.VISIBLE);
-                loadHtml();
+               // loadHtml();
             } else showNews(news);
         }
         super.onResume();
@@ -108,14 +108,14 @@ public class NewsFragm /*extends Fragment implements ProgressListener */{
         super.onSaveInstanceState(outState);
     }
 
-    private void loadHtml() {
+   /* private void loadHtml() {
 
         int idNews = news.get_id();
         Connect connect = new Connect();
         FuncConnect type = FuncConnect.CURR_NEWS;
         type.setId(idNews);
         connect.latestNews(type, this);
-    }
+    }*/
 
     @Override
     public void fin(List<Event> newsList) {
@@ -124,7 +124,7 @@ public class NewsFragm /*extends Fragment implements ProgressListener */{
 
             this.news =  newsList.get(0);
 
-            String htmlText = news.getHtmlNews();
+            String htmlText = news.getText();
             if (htmlText!= null && !htmlText.equals("")) {
                 showNews(news);
             } else {
@@ -135,18 +135,18 @@ public class NewsFragm /*extends Fragment implements ProgressListener */{
         }
     }
 
-    private void showNews(Event news) {
+    private void showNews(Event event) {
 
-        String htmltext = news.getHtmlNews();
+        String htmltext = event.getText();
 
         textNews.setText(Html.fromHtml(htmltext));
         textNews.setMovementMethod(new ScrollingMovementMethod());
 
-        imageLoader.displayImage(news.getUrlImage(), image, options);
+        imageLoader.displayImage(event.getUrlImage(), image, options);
         progressBar.setVisibility(View.GONE);
 
-        title.setText(news.getTitle());
-        date.setText(Convert.date(news.getDate()));
-    }*/
+        title.setText(event.getTitle());
+        date.setText(/*Convert.date(news.getDate()*/event.getDate());
+    }
 
 }

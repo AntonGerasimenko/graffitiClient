@@ -48,15 +48,16 @@ public class NewsListAdapt extends ArrayAdapter <Event> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_short_list, parent, false);
         }
 
-        TextView title =(TextView) convertView.findViewById(R.id.title);
+        TextView date =(TextView) convertView.findViewById(R.id.date);
+        TextView title = (TextView) convertView.findViewById(R.id.title);
         TextView textEvent = (TextView) convertView.findViewById(R.id.text);
         ImageView image = (ImageView) convertView.findViewById(R.id.imageView);
 
         Event event = objects.get(position);
 
         viewImage(event.getUrlImage(),image);
-
-        title.setText(/*Convert.date(news.get())*/event.getTitle());
+        title.setText(event.getTitle());
+        date.setText(/*Convert.date(news.get())*/event.getDate());
         textEvent.setText(event.getText());
 
         return convertView;

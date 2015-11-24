@@ -7,6 +7,7 @@ public class EventPOJO {
 
     private int id;
     private String title;
+    private String date;
     private String text;
     private String image;
 
@@ -41,5 +42,13 @@ public class EventPOJO {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }
