@@ -118,7 +118,7 @@ public class Connect {
             case CURR_NEWS:
                 String htmlText = parser.parseText(stream);
                 int id = type.getId();
-                DBService.addTextNews(id, htmlText);
+               // DBService.addTextNews(id, htmlText);
                 break;
         }
     }

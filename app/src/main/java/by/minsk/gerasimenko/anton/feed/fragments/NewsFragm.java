@@ -30,9 +30,9 @@ import by.minsk.gerasimenko.anton.feed.models.Event;
 /**
  * Created by gerasimenko on 01.10.2015.
  */
-public class NewsFragm extends Fragment implements ProgressListener {
+public class NewsFragm /*extends Fragment implements ProgressListener */{
 
-    public static final String TAG = "NewFragm";
+  /*  public static final String TAG = "NewFragm";
 
     private FragmentsManage manager;
     private Event news;
@@ -147,6 +147,6 @@ public class NewsFragm extends Fragment implements ProgressListener {
 
         title.setText(news.getTitle());
         date.setText(Convert.date(news.getDate()));
-    }
+    }*/
 
 }

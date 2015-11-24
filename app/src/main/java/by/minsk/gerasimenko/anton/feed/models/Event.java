@@ -32,10 +32,14 @@ public class Event implements Serializable {
 
     private final static Event empty = new Event();
 
-    public static Event getEvent(EventPOJO newsPOJO){
+    public static Event getEvent(EventPOJO eventPOJO){
 
         Event instance = new Event();
 
+        instance.setText(eventPOJO.getText());
+        instance.setTitle(eventPOJO.getTitle());
+        instance.setEventId(eventPOJO.getId());
+        instance.setUrlImage(eventPOJO.getImage());
 
         return  instance;
     }
@@ -47,7 +51,6 @@ public class Event implements Serializable {
     public void setTitle(String title) {
         this.title = title;
     }
-
 
     public int getId() {
         return id;

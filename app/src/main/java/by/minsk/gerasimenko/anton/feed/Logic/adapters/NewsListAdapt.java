@@ -14,7 +14,6 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import java.util.List;
 
-import by.minsk.gerasimenko.anton.feed.Logic.Convert;
 import by.minsk.gerasimenko.anton.feed.R;
 import by.minsk.gerasimenko.anton.feed.models.Event;
 
@@ -49,16 +48,16 @@ public class NewsListAdapt extends ArrayAdapter <Event> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_short_list, parent, false);
         }
 
-        TextView date =(TextView) convertView.findViewById(R.id.date);
-        TextView title = (TextView) convertView.findViewById(R.id.title);
+        TextView title =(TextView) convertView.findViewById(R.id.title);
+        TextView textEvent = (TextView) convertView.findViewById(R.id.text);
         ImageView image = (ImageView) convertView.findViewById(R.id.imageView);
 
-        Event news = objects.get(position);
+        Event event = objects.get(position);
 
-        viewImage(news.getUrlImage(),image);
+        viewImage(event.getUrlImage(),image);
 
-        date.setText(Convert.date(news.getDate()));
-        title.setText(news.getTitle());
+        title.setText(/*Convert.date(news.get())*/event.getTitle());
+        textEvent.setText(event.getText());
 
         return convertView;
     }

@@ -10,8 +10,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:background="@android:drawable/stat_sys_phone_call"
             android:id="@+id/imageView" />
 
@@ -20,7 +20,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_gravity="center"
-            android:id="@+id/date"  />
+            android:text="title"
+            android:id="@+id/title"  />
     </LinearLayout>
 
     <TextView
@@ -29,7 +30,7 @@
         android:paddingLeft="30dp"
         android:layout_weight="30"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Title"
-        android:id="@+id/title"
+        android:text="Lorem ipsum"
+        android:id="@+id/text"
         android:layout_gravity="center_horizontal" />
 </LinearLayout><!-- From: file:/E:/projects/Python/GraffitiClient/app/src/main/res/layout/item_short_list.xml -->

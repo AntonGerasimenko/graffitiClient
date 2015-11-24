@@ -770,7 +770,6 @@ containing a value of this type.
         public static final int abs__up=0x7f0a0005;
         public static final int btnList=0x7f0a003b;
         public static final int container=0x7f0a0032;
-        public static final int date=0x7f0a0035;
         public static final int disableHome=0x7f0a0009;
         public static final int edit_query=0x7f0a0026;
         public static final int homeAsUp=0x7f0a000a;
@@ -787,8 +786,9 @@ containing a value of this type.
         public static final int showTitle=0x7f0a000d;
         public static final int status=0x7f0a003d;
         public static final int tabMode=0x7f0a0008;
+        public static final int text=0x7f0a0036;
         public static final int textNews=0x7f0a003a;
-        public static final int title=0x7f0a0036;
+        public static final int title=0x7f0a0035;
         public static final int useLogo=0x7f0a000e;
         public static final int wrap_content=0x7f0a000f;
     }

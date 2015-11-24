@@ -17,17 +17,17 @@ import by.minsk.gerasimenko.anton.feed.models.Event;
 /**
  * Created by gerasimenko on 01.10.2015.
  */
-public class NewsList extends ListFragment {
+public class EventsList extends ListFragment {
 
     public static final String TAG = "ShortList";
     private FragmentsManage manager;
 
     private List<Event> list;
 
-    public static NewsList newInstance(List<Event> list ){
+    public static EventsList newInstance(List<Event> list ){
         assert (list!=null);
 
-        NewsList instance = new NewsList();
+        EventsList instance = new EventsList();
         instance.list = list;
 
         return instance;
