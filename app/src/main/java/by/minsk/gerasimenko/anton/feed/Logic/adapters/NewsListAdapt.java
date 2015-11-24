@@ -1,7 +1,6 @@
 package by.minsk.gerasimenko.anton.feed.Logic.adapters;
 
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,9 +8,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.nostra13.universalimageloader.cache.disc.DiskCache;
-
-import com.nostra13.universalimageloader.cache.disc.naming.HashCodeFileNameGenerator;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -20,14 +16,14 @@ import java.util.List;
 
 import by.minsk.gerasimenko.anton.feed.Logic.Convert;
 import by.minsk.gerasimenko.anton.feed.R;
-import by.minsk.gerasimenko.anton.feed.models.News;
+import by.minsk.gerasimenko.anton.feed.models.Event;
 
 /**
  * Created by gerasimenko on 01.10.2015.
  */
-public class NewsListAdapt extends ArrayAdapter <News> {
+public class NewsListAdapt extends ArrayAdapter <Event> {
 
-    private List<News> objects;
+    private List<Event> objects;
     private ImageLoader imageLoader = ImageLoader.getInstance();
     private DisplayImageOptions options = new DisplayImageOptions.Builder()
             .cacheInMemory(true)
@@ -41,7 +37,7 @@ public class NewsListAdapt extends ArrayAdapter <News> {
     }
 
 
-    public NewsListAdapt(Context context, int resource, List<News> objects) {
+    public NewsListAdapt(Context context, int resource, List<Event> objects) {
         super(context, resource, objects);
 
         this.objects = objects;
@@ -57,7 +53,7 @@ public class NewsListAdapt extends ArrayAdapter <News> {
         TextView title = (TextView) convertView.findViewById(R.id.title);
         ImageView image = (ImageView) convertView.findViewById(R.id.imageView);
 
-        News news = objects.get(position);
+        Event news = objects.get(position);
 
         viewImage(news.getUrlImage(),image);
 

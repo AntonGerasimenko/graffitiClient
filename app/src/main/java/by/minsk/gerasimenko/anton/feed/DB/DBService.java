@@ -1,7 +1,6 @@
 package by.minsk.gerasimenko.anton.feed.DB;
 
 import com.j256.ormlite.dao.Dao;
-import com.j256.ormlite.stmt.DeleteBuilder;
 import com.j256.ormlite.stmt.QueryBuilder;
 
 import java.sql.SQLException;
@@ -12,8 +11,7 @@ import java.util.List;
 import java.util.Set;
 
 import by.minsk.gerasimenko.anton.feed.models.EventPOJO;
-import by.minsk.gerasimenko.anton.feed.models.News;
-import by.minsk.gerasimenko.anton.feed.models.NewsPOJO;
+import by.minsk.gerasimenko.anton.feed.models.Event;
 
 /**
  * Created by gerasimenko on 08.10.2015.
@@ -22,11 +20,11 @@ public class DBService {
 
     public static void put(List<EventPOJO> newses) {
         try {
-            Dao<News,String> dao = DBManager.getInstance().getHelper().getNewsDao();
+            Dao<Event,String> dao = DBManager.getInstance().getHelper().getNewsDao();
 
-            List<News> list = new ArrayList<>();
-            for(NewsPOJO newsPOJO:newses){
-                list.add(News.getNews(newsPOJO));
+            List<Event> list = new ArrayList<>();
+            for(EventPOJO eventPOJO:newses){
+                list.add(Event.getEvent(eventPOJO));
             }
             dao.create(list);
         } catch (SQLException e) {
@@ -37,15 +35,15 @@ public class DBService {
     public static Set<Integer> getDownloadedId(){
         Set<Integer> out = new HashSet<>();
 
-        for (News news:getAll()) {
-            out.add(news.get_id());
+        for (Event news:getAll()) {
+            out.add(news.getId());
         }
         return out;
     }
 
-    public static List<News> getAll(){
+    public static List<Event> getAll(){
         try {
-            Dao<News,String>     dao = DBManager.getInstance().getHelper().getNewsDao();
+            Dao<Event,String>     dao = DBManager.getInstance().getHelper().getNewsDao();
             return  dao.queryForAll();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -53,19 +51,19 @@ public class DBService {
         return Collections.emptyList();
     }
 
-    public static void addTextNews(int id,String htmlText) {
+  /*  public static void addTextNews(int id,String htmlText) {
         try {
-            Dao<News,String> dao = DBManager.getInstance().getHelper().getNewsDao();
+            Dao<Event,String> dao = DBManager.getInstance().getHelper().getNewsDao();
 
 
 
-            QueryBuilder<News,String> builder = dao.queryBuilder();
+            QueryBuilder<Event,String> builder = dao.queryBuilder();
             builder.where().eq("_id", id);
-            List<News> newses = dao.query(builder.prepare());
+            List<Event> newses = dao.query(builder.prepare());
 
             if (newses!= null) {
-                News correct = newses.get(0);
-                DeleteBuilder<News,String> deleteBuilder = dao.deleteBuilder();
+                Event correct = newses.get(0);
+                DeleteBuilder<Event,String> deleteBuilder = dao.deleteBuilder();
                 deleteBuilder.where().eq("_id",correct.get_id());
                 deleteBuilder.delete();
 
@@ -76,20 +74,20 @@ public class DBService {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
-    public static List<News> getNews(int id) {
-        List<News> newses = null;
+    public static List<Event> getNews(int id) {
+        List<Event> newses = null;
         try {
-            Dao<News, String> dao = DBManager.getInstance().getHelper().getNewsDao();
+            Dao<Event, String> dao = DBManager.getInstance().getHelper().getNewsDao();
 
 
-            QueryBuilder<News, String> builder = dao.queryBuilder();
+            QueryBuilder<Event, String> builder = dao.queryBuilder();
             builder.where().eq("_id", id);
             newses = dao.query(builder.prepare());
         }catch (SQLException e) {
             e.printStackTrace();
         }
-        return newses!=null ? newses: Collections.<News>emptyList();
+        return newses!=null ? newses: Collections.<Event>emptyList();
     }
 }

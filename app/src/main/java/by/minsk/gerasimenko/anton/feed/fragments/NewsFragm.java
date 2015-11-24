@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -26,7 +25,7 @@ import by.minsk.gerasimenko.anton.feed.Logic.ProgressListener;
 import by.minsk.gerasimenko.anton.feed.Network.Connect;
 import by.minsk.gerasimenko.anton.feed.R;
 import by.minsk.gerasimenko.anton.feed.models.FuncConnect;
-import by.minsk.gerasimenko.anton.feed.models.News;
+import by.minsk.gerasimenko.anton.feed.models.Event;
 
 /**
  * Created by gerasimenko on 01.10.2015.
@@ -36,7 +35,7 @@ public class NewsFragm extends Fragment implements ProgressListener {
     public static final String TAG = "NewFragm";
 
     private FragmentsManage manager;
-    private News news;
+    private Event news;
     private ImageLoader imageLoader = ImageLoader.getInstance();
 
     private DisplayImageOptions options = new DisplayImageOptions.Builder()
@@ -50,7 +49,7 @@ public class NewsFragm extends Fragment implements ProgressListener {
     private ImageView image;
     private ProgressBar progressBar;
 
-    public static NewsFragm newInstance(News news){
+    public static NewsFragm newInstance(Event news){
         assert (news != null);
 
         NewsFragm instance = new NewsFragm();
@@ -82,7 +81,7 @@ public class NewsFragm extends Fragment implements ProgressListener {
         Log.d("Fragments_Load", "NewsFragm");
         manager = (FragmentsManage) getActivity();
         if (savedInstanceState!= null) {
-            news = (News)savedInstanceState.getSerializable("news");
+            news = (Event)savedInstanceState.getSerializable("news");
         }
 
         manager.setTitleActionBar(TAG);
@@ -119,7 +118,7 @@ public class NewsFragm extends Fragment implements ProgressListener {
     }
 
     @Override
-    public void fin(List<News> newsList) {
+    public void fin(List<Event> newsList) {
 
         if (newsList != null && !newsList.isEmpty()) {
 
@@ -136,7 +135,7 @@ public class NewsFragm extends Fragment implements ProgressListener {
         }
     }
 
-    private void showNews(News news) {
+    private void showNews(Event news) {
 
         String htmltext = news.getHtmlNews();
 

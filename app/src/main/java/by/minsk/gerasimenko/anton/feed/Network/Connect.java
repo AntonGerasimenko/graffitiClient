@@ -18,8 +18,7 @@ import by.minsk.gerasimenko.anton.feed.DB.DBService;
 import by.minsk.gerasimenko.anton.feed.Logic.ProgressListener;
 import by.minsk.gerasimenko.anton.feed.models.EventPOJO;
 import by.minsk.gerasimenko.anton.feed.models.FuncConnect;
-import by.minsk.gerasimenko.anton.feed.models.News;
-import by.minsk.gerasimenko.anton.feed.models.NewsPOJO;
+import by.minsk.gerasimenko.anton.feed.models.Event;
 
 /**
  * Created by gerasimenko on 02.10.2015.
@@ -45,11 +44,11 @@ public class Connect {
             @Override
             public void handleMessage(Message msg) {
                 if (type.equals(FuncConnect.CURR_NEWS)){
-                    List <News> list = DBService.getNews(type.getId());
+                    List <Event> list = DBService.getNews(type.getId());
                     listener.fin(list);
                 } else if (type.equals(FuncConnect.ALL_NEWS)) {
 
-                    List <News> list = DBService.getAll();
+                    List <Event> list = DBService.getAll();
                     listener.fin(list);
                 }
 

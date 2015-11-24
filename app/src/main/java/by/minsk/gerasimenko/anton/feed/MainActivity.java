@@ -5,7 +5,6 @@ package by.minsk.gerasimenko.anton.feed;
 import android.os.Bundle;
 
 
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.Fragment;
 import android.view.View;
@@ -20,7 +19,7 @@ import by.minsk.gerasimenko.anton.feed.fragments.FragmentsManage;
 import by.minsk.gerasimenko.anton.feed.fragments.NewsFragm;
 import by.minsk.gerasimenko.anton.feed.fragments.NewsList;
 import by.minsk.gerasimenko.anton.feed.fragments.Welcome;
-import by.minsk.gerasimenko.anton.feed.models.News;
+import by.minsk.gerasimenko.anton.feed.models.Event;
 
 public  class MainActivity extends SherlockFragmentActivity implements FragmentsManage {
 
@@ -44,7 +43,7 @@ public  class MainActivity extends SherlockFragmentActivity implements Fragments
     }
 
     @Override
-    public void showList(List<News> listNews){
+    public void showList(List<Event> listNews){
 
         findViewById(R.id.progressBar3).setVisibility(View.GONE);
         Fragment list = NewsList.newInstance(listNews);
@@ -54,7 +53,7 @@ public  class MainActivity extends SherlockFragmentActivity implements Fragments
     }
 
     @Override
-    public void showNews(News news) {
+    public void showNews(Event news) {
 
         Fragment fragment = NewsFragm.newInstance(news);
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();

@@ -1,7 +1,5 @@
 package by.minsk.gerasimenko.anton.feed.models;
 
-import com.j256.ormlite.table.DatabaseTable;
-
 /**
  * Created by gerasimenko on 24.11.2015.
  */

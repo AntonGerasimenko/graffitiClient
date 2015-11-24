@@ -2,7 +2,7 @@ package by.minsk.gerasimenko.anton.feed.fragments;
 
 import java.util.List;
 
-import by.minsk.gerasimenko.anton.feed.models.News;
+import by.minsk.gerasimenko.anton.feed.models.Event;
 
 /**
  * Created by gerasimenko on 01.10.2015.
@@ -10,8 +10,8 @@ import by.minsk.gerasimenko.anton.feed.models.News;
 public interface FragmentsManage {
 
     void showWelcome();
-    void showList(List<News> list);
-    void showNews(News news);
+    void showList(List<Event> list);
+    void showNews(Event news);
     void setTitleActionBar(String tag);
 
 }

@@ -13,8 +13,6 @@ import java.util.Collections;
 import java.util.List;
 
 import by.minsk.gerasimenko.anton.feed.models.EventPOJO;
-import by.minsk.gerasimenko.anton.feed.models.FuncConnect;
-import by.minsk.gerasimenko.anton.feed.models.NewsPOJO;
 
 
 /**

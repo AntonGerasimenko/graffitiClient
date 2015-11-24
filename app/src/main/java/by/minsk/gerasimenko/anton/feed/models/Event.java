@@ -11,10 +11,8 @@ import java.io.Serializable;
  */
 
 @DatabaseTable(tableName="Events")
-public class News implements Serializable {
+public class Event implements Serializable {
     @DatabaseField(dataType = DataType.INTEGER) private int id;
-
-
     @DatabaseField(dataType = DataType.INTEGER) private int eventId;
     @DatabaseField(dataType = DataType.STRING) private String title;
     @DatabaseField(dataType = DataType.STRING) private String text;
@@ -28,18 +26,16 @@ public class News implements Serializable {
         this.urlImage = urlImage;
     }
 
-    public static News getEmpty() {
+    public static Event getEmpty() {
         return empty;
     }
 
-    private final static  News empty = new News();
+    private final static Event empty = new Event();
 
-    public static News getNews(NewsPOJO newsPOJO){
+    public static Event getEvent(EventPOJO newsPOJO){
 
-        News instance = new News();
+        Event instance = new Event();
 
-        instance.setTitle(newsPOJO.getTitle());
-        instance.setUrlImage(newsPOJO.getFrontImageUrl());
 
         return  instance;
     }

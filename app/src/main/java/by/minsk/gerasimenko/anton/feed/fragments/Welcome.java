@@ -17,7 +17,7 @@ import by.minsk.gerasimenko.anton.feed.Logic.ProgressListener;
 import by.minsk.gerasimenko.anton.feed.Network.Connect;
 import by.minsk.gerasimenko.anton.feed.R;
 import by.minsk.gerasimenko.anton.feed.models.FuncConnect;
-import by.minsk.gerasimenko.anton.feed.models.News;
+import by.minsk.gerasimenko.anton.feed.models.Event;
 
 
 /**
@@ -61,7 +61,7 @@ public class Welcome extends Fragment implements View.OnClickListener , Progress
     }
 
     @Override
-    public void fin(List<News> news) {
+    public void fin(List<Event> news) {
         Log.d("Fragments_Load", "Welcome: " + news.size());
         if (news.isEmpty()) {
 
