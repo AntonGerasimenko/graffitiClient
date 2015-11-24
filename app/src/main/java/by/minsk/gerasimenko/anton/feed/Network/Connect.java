@@ -1,7 +1,5 @@
 package by.minsk.gerasimenko.anton.feed.Network;
 
-
-
 import android.os.Handler;
 import android.os.Message;
 
@@ -18,6 +16,7 @@ import java.util.Set;
 
 import by.minsk.gerasimenko.anton.feed.DB.DBService;
 import by.minsk.gerasimenko.anton.feed.Logic.ProgressListener;
+import by.minsk.gerasimenko.anton.feed.models.EventPOJO;
 import by.minsk.gerasimenko.anton.feed.models.FuncConnect;
 import by.minsk.gerasimenko.anton.feed.models.News;
 import by.minsk.gerasimenko.anton.feed.models.NewsPOJO;
@@ -27,7 +26,7 @@ import by.minsk.gerasimenko.anton.feed.models.NewsPOJO;
  */
 public class Connect {
 
-    private final String url = "http://127.0.0.1";
+    private final String url = "http://192.168.5.55";
 
     private static Handler handler;
 
@@ -64,12 +63,16 @@ public class Connect {
         try {
             URL url = new URL(this.url);
             urlConnection = (HttpURLConnection) url.openConnection();
+
+
+            urlConnection.addRequestProperty("Accept-encoding", "gzip, deflate");
+            urlConnection.addRequestProperty("Accept", "*/*");
+            urlConnection.setRequestProperty("Content-Type", "application/json");
             urlConnection.setDoOutput(true);
             urlConnection.setRequestMethod("POST");
             urlConnection.setUseCaches(false);
             urlConnection.setConnectTimeout(10000);
             urlConnection.setReadTimeout(10000);
-            urlConnection.setRequestProperty("Content-Type", "application/json");
             urlConnection.connect();
 
             OutputStream out = new BufferedOutputStream(urlConnection.getOutputStream());
@@ -88,11 +91,11 @@ public class Connect {
         }
     }
 
-    private List<NewsPOJO> extractDownloadNews(List<NewsPOJO> input) {
-        List<NewsPOJO> out = new ArrayList<>();
+    private List<EventPOJO> extractDownloadNews(List<EventPOJO> input) {
+        List<EventPOJO> out = new ArrayList<>();
         Set<Integer> ids = DBService.getDownloadedId();
 
-        for(NewsPOJO newsPOJO:input) {
+        for(EventPOJO newsPOJO:input) {
 
             int id = newsPOJO.getId();
             if (!ids.contains(id)) {
@@ -106,9 +109,12 @@ public class Connect {
         Parser parser = new Parser();
         switch (type) {
             case ALL_NEWS:
-                List<NewsPOJO> response =  parser.parse(stream);
-                response = extractDownloadNews(response);
+                List<EventPOJO> response =  parser.parse(stream);
+               // response = extractDownloadNews(response);
                 DBService.put(response);
+
+                response.size();
+
                 break;
             case CURR_NEWS:
                 String htmlText = parser.parseText(stream);

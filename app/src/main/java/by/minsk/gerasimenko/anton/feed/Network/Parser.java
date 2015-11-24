@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.JsonNodeType;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -11,6 +12,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+import by.minsk.gerasimenko.anton.feed.models.EventPOJO;
 import by.minsk.gerasimenko.anton.feed.models.FuncConnect;
 import by.minsk.gerasimenko.anton.feed.models.NewsPOJO;
 
@@ -21,17 +23,18 @@ import by.minsk.gerasimenko.anton.feed.models.NewsPOJO;
 public class Parser {
 
 
-    public List<NewsPOJO> parse(InputStream stream){
+    public List<EventPOJO> parse(InputStream stream){
         try {
             JsonFactory factory = new JsonFactory();
             JsonParser parser  = factory.createParser(stream);
 
             ObjectMapper objectMapper = new ObjectMapper();
             JsonNode treeNode = objectMapper.readTree(parser);
-            
-            String message = String.valueOf(treeNode.get("result").get("items"));
 
-            return Arrays.asList(objectMapper.readValue(message, NewsPOJO[].class));
+            if (treeNode.getNodeType()== JsonNodeType.ARRAY) {
+
+                return  Arrays.asList(objectMapper.readValue(treeNode.toString(), EventPOJO[].class));
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

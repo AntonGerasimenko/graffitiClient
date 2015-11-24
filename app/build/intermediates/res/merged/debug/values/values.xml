@@ -79,7 +79,7 @@
     <string name="abs__shareactionprovider_share_with_application">Share with <ns1:g example="Bluetooth" id="application_name">%s</ns1:g></string>
     <!-- From: file:/E:/projects/Python/GraffitiClient/app/src/main/res/values/strings.xml -->
     <eat-comment/>
-    <string name="app_name">Feed</string>
+    <string name="app_name">Graffiti</string>
     <string name="current_news">Новости подробно</string>
     <string name="err1">Нет связи</string>
     <string name="err2">Не могу загрузить статью</string>

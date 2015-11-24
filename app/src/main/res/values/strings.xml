@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Feed</string>
+    <string name="app_name">Graffiti</string>
 
     <string name="welcome">Привет!</string>
     <string name="list_news">Список новостей</string>

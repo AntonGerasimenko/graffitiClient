@@ -11,6 +11,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import by.minsk.gerasimenko.anton.feed.models.EventPOJO;
 import by.minsk.gerasimenko.anton.feed.models.News;
 import by.minsk.gerasimenko.anton.feed.models.NewsPOJO;
 
@@ -19,7 +20,7 @@ import by.minsk.gerasimenko.anton.feed.models.NewsPOJO;
  */
 public class DBService {
 
-    public static void put(List<NewsPOJO> newses) {
+    public static void put(List<EventPOJO> newses) {
         try {
             Dao<News,String> dao = DBManager.getInstance().getHelper().getNewsDao();
 
