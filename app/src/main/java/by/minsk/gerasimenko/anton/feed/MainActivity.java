@@ -72,9 +72,10 @@ public  class MainActivity extends SherlockFragmentActivity implements Fragments
             case EventsList.TAG:
                 bar.setTitle(R.string.list_news);
                 break;
-            case NewsFragm.TAG:
-                bar.setTitle(R.string.current_news);
+            default:
+                bar.setTitle(tag);
                 break;
         }
+
     }
 }

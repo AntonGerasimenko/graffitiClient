@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import by.minsk.gerasimenko.anton.feed.DB.DBService;
 import by.minsk.gerasimenko.anton.feed.Logic.ProgressListener;
 import by.minsk.gerasimenko.anton.feed.Network.Connect;
 import by.minsk.gerasimenko.anton.feed.R;
@@ -54,8 +55,13 @@ public class Welcome extends Fragment implements View.OnClickListener , Progress
         switch (v.getId()){
             case R.id.btnList:
                 btnList.setVisibility(View.GONE);
+
+                FuncConnect type = FuncConnect.ALL_NEWS;
+                int time = DBService.getLastTime();
+                type.setLastTime(time);
+
                 Connect connect = new Connect();
-                connect.latestNews(FuncConnect.ALL_NEWS,this);
+                connect.latestNews(type,this);
                 break;
         }
     }

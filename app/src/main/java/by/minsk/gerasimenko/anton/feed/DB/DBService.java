@@ -100,4 +100,24 @@ public class DBService {
         }
         return newses!=null ? newses: Collections.<Event>emptyList();
     }
+
+    public static int getLastTime() {
+        int time=0;
+        try {
+            Dao<Event, String> dao = DBManager.getInstance().getHelper().getNewsDao();
+            QueryBuilder<Event, String> builder = dao.queryBuilder();
+            builder
+                    .limit(1L)
+                    .orderBy("id", false);
+            List<Event> events =  dao.query(builder.prepare());
+            if (events != null && !events.isEmpty()) {
+
+                Event event = events.get(0);
+                time = event.getTimeEvent();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return time;
+    }
 }

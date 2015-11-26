@@ -8,6 +8,7 @@ public enum FuncConnect {
     CURR_NEWS;
 
     private int id;
+    private int lastTime;
 
     public void setId(int id) {
 
@@ -16,5 +17,13 @@ public enum FuncConnect {
 
     public int getId() {
         return id;
+    }
+
+    public int getLastTime() {
+        return lastTime;
+    }
+
+    public void setLastTime(int lastTime) {
+        this.lastTime = lastTime;
     }
 }

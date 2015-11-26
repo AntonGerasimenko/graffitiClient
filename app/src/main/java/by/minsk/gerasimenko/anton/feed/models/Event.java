@@ -14,6 +14,7 @@ import java.io.Serializable;
 public class Event implements Serializable {
     @DatabaseField(dataType = DataType.INTEGER) private int id;
     @DatabaseField(dataType = DataType.INTEGER) private int eventId;
+    @DatabaseField(dataType = DataType.INTEGER) private int timeEvent;
     @DatabaseField(dataType = DataType.STRING) private String title;
     @DatabaseField(dataType = DataType.STRING) private String date;
     @DatabaseField(dataType = DataType.STRING) private String text;
@@ -42,6 +43,7 @@ public class Event implements Serializable {
         instance.setEventId(eventPOJO.getId());
         instance.setUrlImage(eventPOJO.getImage());
         instance.setDate(eventPOJO.getDate());
+        instance.setTimeEvent(eventPOJO.getTime_add());
 
         return  instance;
     }
@@ -84,5 +86,13 @@ public class Event implements Serializable {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public int getTimeEvent() {
+        return timeEvent;
+    }
+
+    public void setTimeEvent(int timeEvent) {
+        this.timeEvent = timeEvent;
     }
 }

@@ -22,7 +22,8 @@ public class Generator {
 
         switch (type) {
             case ALL_NEWS:
-                return getAllNews(out);
+
+                return getAllNews(out,type.getLastTime());
             case CURR_NEWS:
                 int id = type.getId();
                 return id > 0 && getCurrNews(out, id);
@@ -30,15 +31,18 @@ public class Generator {
         return false;
     }
 
-
     private boolean getAllNews(OutputStream out) {
         try {
             JsonFactory factory = new JsonFactory();
             JsonGenerator generator  = factory.createGenerator(  out    , JsonEncoding.UTF8);
 
-            generator.writeStartObject();
-            generator.writeBooleanField("all",true);
-            generator.writeEndObject();
+            generator.writeStartArray();
+
+                generator.writeStartObject();
+                generator.writeBooleanField("all",true);
+                generator.writeEndObject();
+
+            generator.writeEndArray();
             generator.close();
 
         } catch (IOException e) {
@@ -47,6 +51,29 @@ public class Generator {
         }
         return true;
     }
+
+    private boolean getAllNews(OutputStream out,int time) {
+        try {
+            JsonFactory factory = new JsonFactory();
+            JsonGenerator generator  = factory.createGenerator(  out    , JsonEncoding.UTF8);
+
+            generator.writeStartArray();
+
+            generator.writeStartObject();
+            generator.writeNumberField("time",time);
+            generator.writeBooleanField("all",true);
+            generator.writeEndObject();
+
+            generator.writeEndArray();
+            generator.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
 
     private boolean getCurrNews(OutputStream out, int id){
         try {

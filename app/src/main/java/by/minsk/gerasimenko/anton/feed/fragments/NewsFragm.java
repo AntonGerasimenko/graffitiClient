@@ -83,8 +83,6 @@ public class NewsFragm extends Fragment implements ProgressListener {
         if (savedInstanceState!= null) {
             news = (Event)savedInstanceState.getSerializable("news");
         }
-
-        manager.setTitleActionBar(TAG);
         super.onActivityCreated(savedInstanceState);
     }
 
@@ -107,15 +105,6 @@ public class NewsFragm extends Fragment implements ProgressListener {
         outState.putSerializable("news", news);
         super.onSaveInstanceState(outState);
     }
-
-   /* private void loadHtml() {
-
-        int idNews = news.get_id();
-        Connect connect = new Connect();
-        FuncConnect type = FuncConnect.CURR_NEWS;
-        type.setId(idNews);
-        connect.latestNews(type, this);
-    }*/
 
     @Override
     public void fin(List<Event> newsList) {
@@ -147,6 +136,7 @@ public class NewsFragm extends Fragment implements ProgressListener {
 
         title.setText(event.getTitle());
         date.setText(/*Convert.date(news.getDate()*/event.getDate());
-    }
 
+        manager.setTitleActionBar(event.getTitle() + "  " +event.getDate());
+    }
 }

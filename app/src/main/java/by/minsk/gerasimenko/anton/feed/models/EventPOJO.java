@@ -6,6 +6,7 @@ package by.minsk.gerasimenko.anton.feed.models;
 public class EventPOJO {
 
     private int id;
+    private int time_add;
     private String title;
     private String date;
     private String text;
@@ -50,5 +51,13 @@ public class EventPOJO {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public int getTime_add() {
+        return time_add;
+    }
+
+    public void setTime_add(int time_add) {
+        this.time_add = time_add;
     }
 }
